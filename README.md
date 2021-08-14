@@ -1,7 +1,17 @@
 # usbtiny-or-usbasp-mega2560-error-0x3e000
 avrdude: verification error, first mismatch at byte 0x3e000, mega2560 and the usbtiny programmer  
 
-output and the message,
+
+
+output and the message,  
+
+![3e000_error.JPG](3e000_error.JPG)  
+
+
+
+
+
+
 ```
 5.4.0
 
