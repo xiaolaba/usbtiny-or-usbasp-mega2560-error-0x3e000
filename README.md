@@ -65,6 +65,43 @@ why verifying is seeing the error ?
 
 
 ### source code and author for the goodhex\stk500boot_v2_mega2560.hex
-it is about 21kb of hex file, burn to the chip is about 
+it is about 21kb of hex file, burn to the chip is about 261386 bytes
 https://github.com/haarer/Arduino-stk500v2-bootloader  
 https://haarer.github.io/arduino,bootloader/2018/03/25/building-an-arduino-mega-2560-bootloader.html  
+
+
+### compile my own bootloader, change the Makefile, rename to stk500boot_v3_mega2560.hex
+try to build bootloader, uses microchip compiler
+https://www.microchip.com/en-us/development-tools-tools-and-software/gcc-compilers-avr-and-arm
+AVR 8-bit Toolchain v3.62 – Windows 	6/24/2019 	45 MB
+
+installed and show 
+```
+avr-gcc -v
+```
+gcc version 5.4.0 (AVR_8_bit_GNU_Toolchain_3.6.2_1778)
+
+
+### Makefile and modification,  
+-Wl,--section-start=.text=$(BOOTLOADER_ADDRESS)  
+add this to specify the image burn to address 0x3e000 for Mega2560 and bootlaoder  
+0x1e000 should be for Mega1280, no device to try  
+
+```
+# linker
+LDFLAGS=-Wl,-Map,$(TRG).map -mmcu=$(MCU) \
+	-lm $(LIBS) -Wl,--section-start=.text=$(BOOTLOADER_ADDRESS)
+```
+
+-DF_CPU=$(F_CPU)UL
+add this to compiler flags
+```
+# compiler
+CFLAGS=-I. $(INC) -g -mmcu=$(MCU) -O$(OPTLEVEL) \
+	-fpack-struct -fshort-enums             \
+	-funsigned-bitfields -funsigned-char    \
+	-Wall -Wstrict-prototypes               \
+	-DF_CPU=$(F_CPU)UL						\
+	-Wa,-ahlms=$(firstword                  \
+	$(filter %.lst, $(<:.c=.lst)))
+```
