@@ -93,8 +93,8 @@ LDFLAGS=-Wl,-Map,$(TRG).map -mmcu=$(MCU) \
 	-lm $(LIBS) -Wl,--section-start=.text=$(BOOTLOADER_ADDRESS)
 ```
 
--DF_CPU=$(F_CPU)UL
-add this to compiler flags
+-DF_CPU=$(F_CPU)UL  
+add this to compiler flags  
 ```
 # compiler
 CFLAGS=-I. $(INC) -g -mmcu=$(MCU) -O$(OPTLEVEL) \
