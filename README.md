@@ -105,3 +105,14 @@ CFLAGS=-I. $(INC) -g -mmcu=$(MCU) -O$(OPTLEVEL) \
 	-Wa,-ahlms=$(firstword                  \
 	$(filter %.lst, $(<:.c=.lst)))
 ```
+
+
+### how to build and burn bootloader  
+run build.bat  
+it will uses avr-gcc to compile stk500boot.c, build the hex, stk500boot_v3_mega2560.hex  
+usbtiny to burn hex to mega2560 via ISP header  
+
+bootloader size is about 18KB of hex, about 26000 Byte, smaller and response is faster than stk500boot_v2_mega2560.hex, does not it!?  
+
+![better_code_size.JPG](better_code_size.JPG)  
+
