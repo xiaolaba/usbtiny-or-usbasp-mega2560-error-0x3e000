@@ -64,6 +64,7 @@ why burn bootloader has no error ?
 why verifying is seeing the error ?
 
 
-### source code and author for the goodhex\stk500boot_v2_mega2560.hex  
+### source code and author for the goodhex\stk500boot_v2_mega2560.hex
+it is about 21kb of hex file, burn to the chip is about 
 https://github.com/haarer/Arduino-stk500v2-bootloader  
 https://haarer.github.io/arduino,bootloader/2018/03/25/building-an-arduino-mega-2560-bootloader.html  
