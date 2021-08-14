@@ -51,12 +51,14 @@ avrdude done.  Thank you.
 ```
 
 
-this is why, look at the soruce code of usbtiny
-https://forum.arduino.cc/t/help-bricked-my-ardunio-mega2560-rev-3/100686/17
-bootloader for Mega2560 is addressed at 0x0003e000
-usbtiny or usbasp only designed with address of uint (16bit) 0x0000ffff
+### this is why, look at the soruce code of usbtiny  
 
-unless change the usbtiny firmware design, this could be no solution.
-question,
+https://forum.arduino.cc/t/help-bricked-my-ardunio-mega2560-rev-3/100686/17  
+bootloader for Mega2560 is addressed at 0x0003e000  
+usbtiny or usbasp only designed with address of uint (16bit) 0x0000ffff  
+
+unless change the usbtiny firmware design, this could be no solution.  
+
+### questions  
 why burn bootloader has no error ?
 why verifying is seeing the error ?
