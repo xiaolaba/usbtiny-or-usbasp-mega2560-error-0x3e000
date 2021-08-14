@@ -62,3 +62,8 @@ unless change the usbtiny firmware design, this could be no solution.
 ### questions  
 why burn bootloader has no error ?
 why verifying is seeing the error ?
+
+
+### source code and author for the goodhex\stk500boot_v2_mega2560.hex  
+https://github.com/haarer/Arduino-stk500v2-bootloader  
+https://haarer.github.io/arduino,bootloader/2018/03/25/building-an-arduino-mega-2560-bootloader.html  
